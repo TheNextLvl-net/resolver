@@ -4,7 +4,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "net.thenextlvl.resolver"
+group = "net.thenextlvl"
 version = "1.0.1"
 
 java {
