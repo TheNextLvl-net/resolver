@@ -1,5 +1,6 @@
 package net.thenextlvl.resolver;
 
+import com.google.common.base.Preconditions;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -54,17 +55,17 @@ public class Ping {
                 output.writeByte(PingUtil.STATUS_REQUEST_PACKET);
 
                 PingUtil.readVarInt(input);
-                int id = PingUtil.readVarInt(input);
+                var id = PingUtil.readVarInt(input);
 
 
-                PingUtil.io(id == -1, "Server prematurely ended stream.");
-                PingUtil.io(id != PingUtil.STATUS_REQUEST_PACKET, "Server returned invalid packet.");
+                Preconditions.checkState(id != -1, "Server prematurely ended stream.");
+                Preconditions.checkState(id == PingUtil.STATUS_REQUEST_PACKET, "Server returned invalid packet.");
 
-                int length = PingUtil.readVarInt(input);
-                PingUtil.io(length == -1, "Server prematurely ended stream.");
-                PingUtil.io(length == 0, "Server returned unexpected value.");
+                var length = PingUtil.readVarInt(input);
+                Preconditions.checkState(length != -1, "Server prematurely ended stream.");
+                Preconditions.checkState(length != 0, "Server returned unexpected value.");
 
-                byte[] data = new byte[length];
+                var data = new byte[length];
                 input.readFully(data);
                 json = new String(data, StandardCharsets.UTF_8);
 
@@ -74,8 +75,8 @@ public class Ping {
 
                 PingUtil.readVarInt(input);
                 id = PingUtil.readVarInt(input);
-                PingUtil.io(id == -1, "Server prematurely ended stream.");
-                PingUtil.io(id != PingUtil.PING_PACKET, "Server returned invalid packet.");
+                Preconditions.checkState(id != -1, "Server prematurely ended stream.");
+                Preconditions.checkState(id == PingUtil.PING_PACKET, "Server returned invalid packet.");
             }
         }
 
