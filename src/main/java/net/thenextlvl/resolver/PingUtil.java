@@ -10,10 +10,13 @@ public class PingUtil {
     public static final byte PING_PACKET = 0x01;
     public static final int STATUS_HANDSHAKE = 1;
 
-    public static void io(final boolean b, final String m) throws IOException {
-        if (b) throw new IOException(m);
-    }
-
+    /**
+     * Reads an integer value from a DataInputStream using Variable-Length Quantity (VarInt) encoding.
+     *
+     * @param in the DataInputStream to read the encoded integer from.
+     * @return the decoded integer value.
+     * @throws IOException if an I/O error occurs while reading from the DataInputStream.
+     */
     public static int readVarInt(DataInputStream in) throws IOException {
         int i = 0;
         int j = 0;
@@ -26,6 +29,13 @@ public class PingUtil {
         return i;
     }
 
+    /**
+     * Writes an integer value to a DataOutputStream using Variable-Length Quantity (VarInt) encoding.
+     *
+     * @param out the DataOutputStream to write the encoded integer to.
+     * @param paramInt the integer value to encode and write.
+     * @throws IOException if an I/O error occurs while writing to the DataOutputStream.
+     */
     public static void writeVarInt(DataOutputStream out, int paramInt) throws IOException {
         while (true) {
             if ((paramInt & 0xFFFFFF80) == 0) {
