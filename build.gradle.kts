@@ -1,10 +1,11 @@
 plugins {
     id("java")
+    id("java-library")
     id("maven-publish")
 }
 
 group = "net.thenextlvl.resolver"
-version = "1.0.0"
+version = "1.0.1"
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -31,10 +32,10 @@ dependencies {
     compileOnly("org.projectlombok:lombok:1.18.34")
     compileOnly("org.jetbrains:annotations:24.1.0")
 
-    implementation("com.google.guava:guava:33.3.0-jre")
-    implementation("com.google.code.gson:gson:2.11.0")
+    api("com.google.guava:guava:33.3.0-jre")
+    api("com.google.code.gson:gson:2.11.0")
 
-    implementation("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT") {
+    api("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT") {
         isTransitive = false
     }
 
