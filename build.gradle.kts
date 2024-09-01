@@ -28,7 +28,7 @@ dependencies {
     implementation("com.google.guava:guava:33.3.0-jre")
     implementation("com.google.code.gson:gson:2.11.0")
 
-    implementation("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT") {
+    implementation("com.velocitypowered:velocity-api:4.0.0-SNAPSHOT") {
         isTransitive = false
     }
 
