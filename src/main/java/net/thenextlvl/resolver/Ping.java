@@ -20,11 +20,22 @@ import java.util.Hashtable;
 import java.util.Optional;
 import java.util.UUID;
 
+/**
+ * The Ping class provides methods to ping a Minecraft server to retrieve its status and resolve its address.
+ * It uses the Gson library for JSON parsing and serialization.
+ */
 public class Ping {
     private static final Gson GSON = new GsonBuilder()
             .registerTypeAdapter(UUID.class, new UUIDAdapter())
             .create();
 
+    /**
+     * Ping a server using specified {@link PingOptions} and retrieve the server ping response.
+     *
+     * @param options the options containing server address, timeout, and protocol version for pinging the server
+     * @return the ping response from the server wrapped in a {@link ServerPing} object
+     * @throws IOException if an I/O error occurs during the ping process
+     */
     public static ServerPing ping(PingOptions options) throws IOException {
         String json;
         long ping;
@@ -110,6 +121,13 @@ public class Ping {
         return output;
     }
 
+    /**
+     * Resolves the given hostname to an InetSocketAddress using DNS SRV records.
+     * If resolution fails, returns an empty Optional.
+     *
+     * @param hostname the hostname to be resolved
+     * @return an Optional containing the resolved InetSocketAddress, or an empty Optional if the resolution fails
+     */
     public static Optional<InetSocketAddress> resolveAddress(String hostname) {
         try {
             var query = "_minecraft._tcp." + hostname;
