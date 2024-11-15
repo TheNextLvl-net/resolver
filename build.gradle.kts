@@ -26,7 +26,7 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.11.3"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    testImplementation("net.thenextlvl.core:files:1.0.5")
+    testImplementation("net.thenextlvl.core:files:2.0.0")
 
     compileOnly("net.thenextlvl.core:annotations:2.0.1")
     compileOnly("org.projectlombok:lombok:1.18.36")
