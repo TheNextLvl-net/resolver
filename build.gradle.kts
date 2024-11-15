@@ -29,7 +29,7 @@ dependencies {
     testImplementation("net.thenextlvl.core:files:1.0.5")
 
     compileOnly("net.thenextlvl.core:annotations:2.0.1")
-    compileOnly("org.projectlombok:lombok:1.18.34")
+    compileOnly("org.projectlombok:lombok:1.18.36")
     compileOnly("org.jetbrains:annotations:26.0.1")
 
     api("com.google.guava:guava:33.3.1-jre")
@@ -39,7 +39,7 @@ dependencies {
         isTransitive = false
     }
 
-    annotationProcessor("org.projectlombok:lombok:1.18.34")
+    annotationProcessor("org.projectlombok:lombok:1.18.36")
 }
 
 tasks.test {
