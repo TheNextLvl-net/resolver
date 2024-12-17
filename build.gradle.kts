@@ -32,7 +32,7 @@ dependencies {
     compileOnly("org.projectlombok:lombok:1.18.36")
     compileOnly("org.jetbrains:annotations:26.0.1")
 
-    api("com.google.guava:guava:33.3.1-jre")
+    api("com.google.guava:guava:33.4.0-jre")
     api("com.google.code.gson:gson:2.11.0")
 
     api("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT") {
