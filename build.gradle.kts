@@ -30,7 +30,7 @@ dependencies {
 
     compileOnly("net.thenextlvl.core:annotations:2.0.1")
     compileOnly("org.projectlombok:lombok:1.18.36")
-    compileOnly("org.jetbrains:annotations:26.0.1")
+    compileOnly("org.jetbrains:annotations:26.0.2")
 
     api("com.google.guava:guava:33.4.0-jre")
     api("com.google.code.gson:gson:2.12.1")
