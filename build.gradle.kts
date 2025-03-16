@@ -36,8 +36,6 @@ dependencies {
     api("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT") {
         isTransitive = false
     }
-
-    annotationProcessor("org.projectlombok:lombok:1.18.36")
 }
 
 tasks.test {
