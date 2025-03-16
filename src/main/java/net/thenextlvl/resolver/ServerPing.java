@@ -4,13 +4,11 @@ import com.google.gson.annotations.SerializedName;
 import com.velocitypowered.api.proxy.server.ServerPing.Players;
 import com.velocitypowered.api.proxy.server.ServerPing.Version;
 import com.velocitypowered.api.util.ModInfo;
-import core.annotation.FieldsAreNullableByDefault;
-import core.annotation.TypesAreNullableByDefault;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NullMarked;
 
 import java.net.InetSocketAddress;
 
@@ -28,9 +26,8 @@ import java.net.InetSocketAddress;
  * <a href="http://wiki.vg/Server_List_Ping">Protocol</a>
  */
 @Getter
+@NullMarked
 @AllArgsConstructor
-@TypesAreNullableByDefault
-@FieldsAreNullableByDefault
 @Setter(value = AccessLevel.PACKAGE)
 public class ServerPing {
     private final @SerializedName("description") Description description;
@@ -39,7 +36,7 @@ public class ServerPing {
     private final @SerializedName("favicon") String favicon;
     private final @SerializedName("modinfo") ModInfo modInfo;
 
-    private @NotNull InetSocketAddress address;
+    private InetSocketAddress address;
     private long ping;
 
     @Override

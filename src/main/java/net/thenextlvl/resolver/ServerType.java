@@ -1,7 +1,7 @@
 package net.thenextlvl.resolver;
 
 import com.velocitypowered.api.network.ProtocolVersion;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.Optional;
