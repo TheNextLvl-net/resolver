@@ -28,8 +28,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("net.thenextlvl.core:files:2.0.1")
 
-    compileOnly("org.projectlombok:lombok:1.18.36")
-    compileOnly("org.jspecify:jspecify:0.3.0")
+    compileOnly("org.jspecify:jspecify:1.0.0")
 
     api("com.google.guava:guava:33.4.0-jre")
     api("com.google.code.gson:gson:2.12.1")
@@ -39,7 +38,6 @@ dependencies {
     }
 
     annotationProcessor("org.projectlombok:lombok:1.18.36")
-    annotationProcessor("org.jspecify:jspecify:0.3.0")
 }
 
 tasks.test {
