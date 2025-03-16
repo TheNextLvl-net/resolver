@@ -65,8 +65,7 @@ public class AddressResolver {
                     return new InetSocketAddress(hostname, port);
                 });
 
-                var pingOptions = PingOptions.builder()
-                        .address(address)
+                var pingOptions = PingOptions.builder(address)
                         .protocolVersion(ProtocolVersion.MAXIMUM_VERSION)
                         .timeout(1000)
                         .build();

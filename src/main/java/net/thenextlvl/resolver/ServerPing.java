@@ -4,10 +4,6 @@ import com.google.gson.annotations.SerializedName;
 import com.velocitypowered.api.proxy.server.ServerPing.Players;
 import com.velocitypowered.api.proxy.server.ServerPing.Version;
 import com.velocitypowered.api.util.ModInfo;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 import org.jspecify.annotations.NullMarked;
 
 import java.net.InetSocketAddress;
@@ -25,10 +21,7 @@ import java.net.InetSocketAddress;
  * <p>
  * <a href="http://wiki.vg/Server_List_Ping">Protocol</a>
  */
-@Getter
 @NullMarked
-@AllArgsConstructor
-@Setter(value = AccessLevel.PACKAGE)
 public class ServerPing {
     private final @SerializedName("description") Description description;
     private final @SerializedName("players") Players players;
@@ -38,6 +31,52 @@ public class ServerPing {
 
     private InetSocketAddress address;
     private long ping;
+
+    public ServerPing(Description description, Players players, Version version, String favicon, ModInfo modInfo, InetSocketAddress address, long ping) {
+        this.description = description;
+        this.players = players;
+        this.version = version;
+        this.favicon = favicon;
+        this.modInfo = modInfo;
+        this.address = address;
+        this.ping = ping;
+    }
+
+    public Description getDescription() {
+        return description;
+    }
+
+    public Players getPlayers() {
+        return players;
+    }
+
+    public Version getVersion() {
+        return version;
+    }
+
+    public String getFavicon() {
+        return favicon;
+    }
+
+    public ModInfo getModInfo() {
+        return modInfo;
+    }
+
+    public InetSocketAddress getAddress() {
+        return address;
+    }
+
+    public long getPing() {
+        return ping;
+    }
+
+    void setAddress(InetSocketAddress address) {
+        this.address = address;
+    }
+
+    void setPing(long ping) {
+        this.ping = ping;
+    }
 
     @Override
     public String toString() {
