@@ -24,8 +24,6 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.11.4"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("net.thenextlvl.core:files:2.0.1")
 
     compileOnly("org.jspecify:jspecify:1.0.0")
@@ -36,10 +34,6 @@ dependencies {
     api("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT") {
         isTransitive = false
     }
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
 
 publishing {
