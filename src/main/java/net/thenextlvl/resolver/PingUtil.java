@@ -1,9 +1,12 @@
 package net.thenextlvl.resolver;
 
+import org.jspecify.annotations.NullMarked;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+@NullMarked
 public class PingUtil {
     public static final byte HANDSHAKE_PACKET = 0x00;
     public static final byte STATUS_REQUEST_PACKET = 0x00;

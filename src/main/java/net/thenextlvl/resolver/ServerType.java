@@ -1,6 +1,7 @@
 package net.thenextlvl.resolver;
 
 import com.velocitypowered.api.network.ProtocolVersion;
+import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 import java.util.Arrays;
@@ -14,6 +15,7 @@ import java.util.Optional;
  * @param modType the type of modification can be null if not applicable
  * @param proxy   indicates if the server is a proxy server
  */
+@NullMarked
 public record ServerType(String brand, @Nullable String modType, boolean proxy) {
     /**
      * An array of predefined server brand names.

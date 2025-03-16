@@ -5,6 +5,7 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
+import org.jspecify.annotations.NullMarked;
 
 import java.lang.reflect.Type;
 import java.util.UUID;
@@ -24,6 +25,7 @@ import java.util.UUID;
  * Deserialize a JSON element into a UUID object.
  * Throws JsonParseException if the JSON format is invalid.
  */
+@NullMarked
 public class UUIDAdapter implements JsonDeserializer<UUID> {
     @Override
     public UUID deserialize(JsonElement json, Type typeOf, JsonDeserializationContext context) throws JsonParseException {

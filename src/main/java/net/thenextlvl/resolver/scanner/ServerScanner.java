@@ -3,6 +3,7 @@ package net.thenextlvl.resolver.scanner;
 import net.thenextlvl.resolver.Ping;
 import net.thenextlvl.resolver.PingOptions;
 import net.thenextlvl.resolver.ServerPing;
+import org.jspecify.annotations.NullMarked;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.function.Consumer;
  * It uses an ExecutorService to manage the concurrent execution of ping tasks and a CountDownLatch to
  * keep track of the completed tasks.
  */
+@NullMarked
 public class ServerScanner {
     private final ExecutorService pool = Executors.newCachedThreadPool();
     private final CountDownLatch latch;

@@ -3,6 +3,7 @@ package net.thenextlvl.resolver.scanner;
 import com.velocitypowered.api.network.ProtocolVersion;
 import net.thenextlvl.resolver.Ping;
 import net.thenextlvl.resolver.PingOptions;
+import org.jspecify.annotations.NullMarked;
 
 import java.net.InetSocketAddress;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.function.Consumer;
  * It uses an ExecutorService to manage the asynchronous tasks and a CountDownLatch to ensure that all
  * tasks are completed before shutting down the thread pool.
  */
+@NullMarked
 public class AddressResolver {
     private final ExecutorService pool = Executors.newCachedThreadPool();
     private final CountDownLatch latch;

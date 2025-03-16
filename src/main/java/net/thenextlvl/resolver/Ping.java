@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.thenextlvl.resolver.adapter.UUIDAdapter;
+import org.jspecify.annotations.NullMarked;
 
 import javax.naming.Context;
 import javax.naming.directory.InitialDirContext;
@@ -24,6 +25,7 @@ import java.util.UUID;
  * The Ping class provides methods to ping a Minecraft server to retrieve its status and resolve its address.
  * It uses the Gson library for JSON parsing and serialization.
  */
+@NullMarked
 public class Ping {
     private static final Gson GSON = new GsonBuilder()
             .registerTypeAdapter(UUID.class, new UUIDAdapter())

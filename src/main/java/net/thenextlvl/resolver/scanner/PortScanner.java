@@ -3,6 +3,7 @@ package net.thenextlvl.resolver.scanner;
 import net.thenextlvl.resolver.Ping;
 import net.thenextlvl.resolver.PingOptions;
 import net.thenextlvl.resolver.ServerPing;
+import org.jspecify.annotations.NullMarked;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -16,6 +17,7 @@ import java.util.function.Consumer;
  * It utilizes a thread pool
  * to perform the scanning concurrently and a latch to synchronize the completion of all tasks.
  */
+@NullMarked
 public class PortScanner {
     private final ExecutorService pool = Executors.newCachedThreadPool();
     private final CountDownLatch latch;

@@ -5,6 +5,7 @@ import com.velocitypowered.api.proxy.server.ServerPing.Players;
 import com.velocitypowered.api.proxy.server.ServerPing.Version;
 import com.velocitypowered.api.util.ModInfo;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 import java.net.InetSocketAddress;
 
@@ -42,23 +43,23 @@ public class ServerPing {
         this.ping = ping;
     }
 
-    public Description getDescription() {
+    public @Nullable Description getDescription() {
         return description;
     }
 
-    public Players getPlayers() {
+    public @Nullable Players getPlayers() {
         return players;
     }
 
-    public Version getVersion() {
+    public @Nullable Version getVersion() {
         return version;
     }
 
-    public String getFavicon() {
+    public @Nullable String getFavicon() {
         return favicon;
     }
 
-    public ModInfo getModInfo() {
+    public @Nullable ModInfo getModInfo() {
         return modInfo;
     }
 
