@@ -28,7 +28,7 @@ dependencies {
 
     compileOnly("org.jspecify:jspecify:1.0.0")
 
-    api("com.google.guava:guava:33.4.5-jre")
+    api("com.google.guava:guava:33.4.6-jre")
     api("com.google.code.gson:gson:2.12.1")
 
     api("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT") {
