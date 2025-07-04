@@ -6,11 +6,15 @@ import core.file.format.TextFile;
 import core.io.IO;
 import net.thenextlvl.resolver.scanner.AddressResolver;
 import net.thenextlvl.resolver.scanner.ServerScanner;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
 public class ResolverTest {
+    @Test
+    public void failOnNoDiscoveredTestsPropertyDoesntWork() {
+    }
 
     public static void main(String[] args) throws InterruptedException {
         var list = new TextFile(IO.of("src/test/", "servers.txt")).getRoot().stream()
