@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation("net.thenextlvl.core:files:3.0.0")
+    testImplementation("net.thenextlvl.core:files:3.0.1")
 
     compileOnly("org.jspecify:jspecify:1.0.0")
 
