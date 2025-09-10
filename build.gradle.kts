@@ -29,7 +29,7 @@ dependencies {
     compileOnly("org.jspecify:jspecify:1.0.0")
 
     api("com.google.guava:guava:999.0.0-HEAD-jre-SNAPSHOT")
-    api("com.google.code.gson:gson:2.13.1")
+    api("com.google.code.gson:gson:2.13.2-rc1")
 
     api("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT") {
         isTransitive = false
