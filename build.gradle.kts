@@ -19,13 +19,10 @@ tasks.compileJava {
 
 repositories {
     mavenCentral()
-    maven("https://repo.thenextlvl.net/releases")
     maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
-    testImplementation("net.thenextlvl.core:files:3.0.1")
-
     compileOnly("org.jspecify:jspecify:1.0.0")
 
     api("com.google.guava:guava:999.0.0-HEAD-jre-SNAPSHOT")
@@ -34,7 +31,7 @@ dependencies {
     api("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT") {
         isTransitive = false
     }
-    
+
     testImplementation(platform("org.junit:junit-bom:6.1.0-SNAPSHOT"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")

@@ -2,19 +2,21 @@ package net.thenextlvl.resolver;
 
 import com.velocitypowered.api.network.ProtocolVersion;
 import com.velocitypowered.api.proxy.server.ServerPing;
-import core.file.format.TextFile;
-import core.io.IO;
 import net.thenextlvl.resolver.scanner.AddressResolver;
 import net.thenextlvl.resolver.scanner.PortScanner;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Optional;
 
 public class PortScannerTest {
     private static final int scanAmount = 10000;
 
-    public static void main(String[] args) throws InterruptedException {
-        var list = new TextFile(IO.of("src/test/", "servers.txt")).getRoot().stream()
+    public static void main(String[] args) throws InterruptedException, IOException {
+        var list = Files.readAllLines(Path.of("src/test/servers.txt"))
+                .stream()
                 .map(string -> string.split("#", 2)[0]) // remove comments
                 .map(String::strip) // strip whitespaces
                 .toList();
