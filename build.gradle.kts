@@ -32,7 +32,7 @@ dependencies {
         isTransitive = false
     }
 
-    testImplementation(platform("org.junit:junit-bom:6.1.0-SNAPSHOT"))
+    testImplementation(platform("org.junit:junit-bom:6.2.0-SNAPSHOT"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
