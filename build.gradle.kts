@@ -28,7 +28,7 @@ dependencies {
     api("com.google.guava:guava:999.0.0-HEAD-jre-SNAPSHOT")
     api("com.google.code.gson:gson:2.14.0")
 
-    api("com.velocitypowered:velocity-api:3.5.0-SNAPSHOT") {
+    api("com.velocitypowered:velocity-api:3.6.0-SNAPSHOT") {
         isTransitive = false
     }
 
