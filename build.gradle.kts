@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.jspecify:jspecify:1.0.0")
+    compileOnly("org.jspecify:jspecify:1.0.1")
 
     api("com.google.guava:guava:999.0.0-HEAD-jre-SNAPSHOT")
     api("com.google.code.gson:gson:2.14.0")
